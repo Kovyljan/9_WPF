@@ -30,8 +30,8 @@
                 <MenuItem Header="Вставить" Command="Paste"  CommandTarget="{Binding ElementName=text_box}"/>
             </MenuItem>
             <MenuItem Header="_Вид">
-                <RadioButton GroupName="Languages" Content="Светлая тема" IsChecked="True" Click="RadioButton_Click_2" />
-                <RadioButton GroupName="Languages" Content="Тёмная тема" Click="RadioButton_Click_3" />                               
+                <RadioButton Content="Светлая тема" IsChecked="True" Click="RadioButton_Click_2" />
+                <RadioButton Content="Тёмная тема" Click="RadioButton_Click_3" />                               
             </MenuItem>
             <MenuItem Header="_Справка"/>
         </Menu>
@@ -57,7 +57,7 @@
             </ToolBar>
             <ToolBar Margin="5" Padding="5">
                 <StackPanel Margin="5" VerticalAlignment="Center">
-                    <RadioButton Content="Чёрный" IsChecked="True" Click="RadioButton_Click"/>
+                    <RadioButton Content="Зелёный" IsChecked="True" Click="RadioButton_Click"/>
                     <RadioButton Content="Красный" Click="RadioButton_Click_1"/>
                 </StackPanel>
             </ToolBar>

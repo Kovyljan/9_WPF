@@ -22,30 +22,27 @@ namespace _9_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        int styleIndex = 0;
         private void RadioButton_Click_2(object sender, RoutedEventArgs e)
         {
-            styleIndex = 0;
-        }
-        private void RadioButton_Click_3(object sender, RoutedEventArgs e)
-        {
-            styleIndex = 1;
-        }
-        public MainWindow()
-        {
-            InitializeComponent();            
-        }
-        private void ThemeChange(object sender, SelectionChangedEventArgs e)
-        {
             Uri uri = new Uri("Light.xaml", UriKind.Relative);
-            if (styleIndex == 1)
-            {
-                uri = new Uri("Dark.xaml", UriKind.Relative);
-            }
             ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            text_box.ClearValue(Window.ForegroundProperty);
             Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resource);
         }
+        private void RadioButton_Click_3(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("Dark.xaml", UriKind.Relative);
+            ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            text_box.ClearValue(Window.ForegroundProperty);
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resource);           
+        }
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+       
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string font_name = (sender as ComboBox).SelectedItem as String;
@@ -105,7 +102,7 @@ namespace _9_WPF
 
         private void RadioButton_Click(object sender, RoutedEventArgs e)
         {
-            text_box.Foreground = Brushes.Black;
+            text_box.Foreground = Brushes.Green;
         }
 
         private void RadioButton_Click_1(object sender, RoutedEventArgs e)
